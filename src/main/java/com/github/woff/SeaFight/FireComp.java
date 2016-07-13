@@ -11,11 +11,7 @@ public class FireComp extends Fire {
         super(map, fletShips);
     }
 
-    private int getVectorFire() {
-        return vectorFire;
-    }
-
-    private void setVectorFire() {
+    public void setVectorFire() {
         random = new Random();
         vectorFire = random.nextInt(4);
     }

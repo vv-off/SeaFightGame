@@ -5,9 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 
-
 public class Main {
-
 
     public static void main(String args[]) throws IOException {
         CommandParsing commandParsing = new CommandParsing();
@@ -62,7 +60,7 @@ public class Main {
                         if (fireResultElement.compareTo(FireResult.KILL) == 0)
                             System.out.println("Вы подбили корабль!");
                         if (fireResultElement.compareTo(FireResult.WIN) == 0) {
-                            System.out.println("Вы выиграли");
+                            System.out.println("Вы подбили корабль. Вы выиграли бой!!!.");
                             break out;
                         }
                     } else {
@@ -71,6 +69,7 @@ public class Main {
                         if (fireResultElement.compareTo(FireResult.REPEAT_FIRE) == 0)
                             System.out.println("Промах, корабль уже подбит/убит ранее.");
                         compFire.setFireCoord(random.nextInt(10) + 1, random.nextInt(10) + 1);
+                        compFire.setVectorFire();
                         do {
                             fireResultElement = compFire.fire();
                             if (compFire.hit(fireResultElement)) {
